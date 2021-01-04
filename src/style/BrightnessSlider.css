@@ -1,0 +1,7 @@
+.range-slider-container > div > div:first-child {
+    background-color: #007bff;
+}
+
+.range-slider-container.disabled > div > div:first-child {
+    background-color: gray;
+}

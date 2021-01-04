@@ -1,0 +1,22 @@
+.main-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: white;
+}
+
+.btn-dark {
+    /*background-color: #292929;*/
+}
+
+.nav-btn {
+    width: 100%;
+}
+
+.switch-off {
+    padding-left: 1.2em !important;
+}
+
+.on-off-switch > div:first-child {
+    width: 100%;
+}
