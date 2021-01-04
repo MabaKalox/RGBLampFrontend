@@ -9,16 +9,16 @@ import Col from 'react-bootstrap/Col';
 import BootstrapSwitchButton from 'bootstrap-switch-button-react';
 import axios from "axios";
 import BrightnessSlider from './Components/BrightnessSlider';
-import ColorHueSlider from './Components/ColorHueSlider';
+import ColorSelect from './Components/ColorSelect';
 
 
 
 const App = () => {
     const [autoApply, setAutoApply] = useState(false);
     const [isON, setIsON] = useState(true);
-    const [mode, setMode] = useState(1);
+    const [mode, setMode] = useState(3);
     const [overallBrightness, setOverallBrightness] = useState(100);
-    const [rgbArray, setRgbArray] = useState([0, 255, 251]);
+    const [hslArray, setHslArray] = useState([90, 100, 50]);
 
     const updateMode = (new_mode: number) => {
         setMode(new_mode);
@@ -33,7 +33,7 @@ const App = () => {
     }
 
     const colorSliderCompleteHandler = () => {
-        console.log(rgbArray)
+        console.log(hslArray)
     }
 
     return (
@@ -110,10 +110,10 @@ const App = () => {
                         {(mode === 3) && <Row>
                             <Col xs={12}>
                                 <Dropdown.Divider />
-                                <ColorHueSlider
-                                    setRgbArray={setRgbArray}
+                                <ColorSelect
+                                    setHslArray={setHslArray}
                                     onChangeCompleteHandler={colorSliderCompleteHandler}
-                                    rgbArray={rgbArray}
+                                    hslArray={hslArray}
                                     label={"Color:"}
                                     isON={isON}
                                 />

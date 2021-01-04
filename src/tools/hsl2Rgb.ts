@@ -5,12 +5,11 @@
  * returns r, g, and b in the set [0, 255].
  *
  * @return  {Array}           The RGB representation
- * @param h
- * @param s
- * @param l
+ * @param hslArray
  */
 
-const hsl2Rgb = (h: number, s: number, l: number) => {
+const hsl2Rgb = (hslArray: number[]) => {
+    let [h, s, l] = hslArray
     s = s / 100;
     l = l / 100;
     let c;
