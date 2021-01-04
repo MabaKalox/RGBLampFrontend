@@ -13,3 +13,19 @@
 .color-lightness-slider-container > div > div:first-child {
     width: 100% !important;
 }
+
+.color-hue-slider-container.disabled > div > div:first-child {
+    background: linear-gradient(to right, #585858 0%, #c6c6c6 100%) !important;
+}
+
+.color-saturation-slider-container.disabled > div > div:first-child {
+    background: linear-gradient(to right, #585858 0%, #c6c6c6 100%) !important;
+}
+
+.color-lightness-slider-container.disabled > div > div:first-child {
+    background: linear-gradient(to right, #585858 0%, #c6c6c6 100%) !important;
+}
+
+.color-demo.disabled {
+    background-color: gray !important;
+}

@@ -73,11 +73,13 @@ const ColorSelect = (props: Props) => {
 
     // @ts-ignore
     const colorInput = (e: React.ChangeEvent<FormControl>, i: number) => {
-        const new_value = Number(e.target.value);
-        if (!isNaN(new_value) && new_value >= 0 && new_value <= 255) {
-            const rgbArray = hsl2Rgb(props.hslArray);
-            rgbArray[i] = Number(e.target.value);
-            props.setHslArray(rgb2Hsl(rgbArray));
+        if (props.isON) {
+            const new_value = Number(e.target.value);
+            if (!isNaN(new_value) && new_value >= 0 && new_value <= 255) {
+                const rgbArray = hsl2Rgb(props.hslArray);
+                rgbArray[i] = Number(e.target.value);
+                props.setHslArray(rgb2Hsl(rgbArray));
+            }
         }
     }
 
@@ -104,7 +106,7 @@ const ColorSelect = (props: Props) => {
                             onChange={e => colorInput(e, 2)}
                         />
                         <InputGroup.Prepend>
-                            <InputGroup.Text className="rounded-right"
+                            <InputGroup.Text className={["rounded-right", "color-demo", ((!props.isON) ? "disabled" : "")].join(" ")}
                                              style={{backgroundColor: "rgb(" + hsl2Rgb(props.hslArray).join(", ") + ")"}}>
                                 &#8711;
                             </InputGroup.Text>
