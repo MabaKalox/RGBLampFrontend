@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2769b096-c123-4ba9-b3db-b6f85a87506b" name="Default Changelist" comment="Color Selection done">
+    <list default="true" id="2769b096-c123-4ba9-b3db-b6f85a87506b" name="Default Changelist" comment="Color Selection fix disable mode">
+      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/BrightnessSlider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/BrightnessSlider.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/ColorSelect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ColorSelect.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/ColorSelect.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/ColorSelect.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +42,7 @@
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="application.passwordSafe" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -67,7 +70,9 @@
       <workItem from="1609673312536" duration="1395000" />
       <workItem from="1609731411497" duration="671000" />
       <workItem from="1609732094311" duration="2345000" />
-      <workItem from="1609734451710" duration="13869000" />
+      <workItem from="1609734451710" duration="14066000" />
+      <workItem from="1609748536881" duration="166000" />
+      <workItem from="1609751519805" duration="3491000" />
     </task>
     <task id="LOCAL-00001" summary="fisrt_commit">
       <created>1609742709258</created>
@@ -83,7 +88,21 @@
       <option name="project" value="LOCAL" />
       <updated>1609747157839</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Color Selection fix disable mode">
+      <created>1609748363950</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1609748363950</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Color Selection fix disable mode">
+      <created>1609748369527</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1609748369527</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -104,6 +123,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fisrt_commit" />
     <MESSAGE value="Color Selection done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Color Selection done" />
+    <MESSAGE value="Color Selection fix disable mode" />
+    <option name="LAST_COMMIT_MESSAGE" value="Color Selection fix disable mode" />
   </component>
 </project>

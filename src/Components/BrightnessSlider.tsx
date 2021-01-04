@@ -6,6 +6,8 @@ import InputGroup from 'react-bootstrap/InputGroup';
 // @ts-ignore
 import Slider from 'react-rangeslider';
 import '../style/BrightnessSlider.css'
+import hsl2Rgb from "../tools/hsl2Rgb";
+import rgb2Hsl from "../tools/rgb2Hsl";
 
 type AppProps = {
     label: string,
@@ -23,6 +25,22 @@ const BrightnessSlider = (props: AppProps) => {
         // console.log(new_value)
     }
 
+    // @ts-ignore
+    const brightnessInput = (e: React.ChangeEvent<FormControl>) => {
+        if (props.isON) {
+            const new_value = Number(e.target.value);
+            if (!isNaN(new_value)) {
+                if (new_value >= 0 && new_value <= 100) {
+                    props.setOverallBrightness(new_value);
+                } else if (new_value > 100) {
+                    props.setOverallBrightness(100);
+                }else if (new_value < 0) {
+                    props.setOverallBrightness(0);
+                }
+            }
+        }
+    }
+
     return (
         <Form>
             <Form.Row className="justify-content-center">
@@ -31,7 +49,7 @@ const BrightnessSlider = (props: AppProps) => {
                         <InputGroup.Prepend>
                             <InputGroup.Text>Brightness:</InputGroup.Text>
                         </InputGroup.Prepend>
-                        <FormControl id="inlineFormInputGroupUsername" placeholder="[ 0-100 ]" />
+                        <FormControl value={props.overallBrightness} onChange={brightnessInput} id="inlineFormInputGroupBrightness" placeholder="[ 0-100 ]" />
                     </InputGroup>
                 </Col>
             </Form.Row>

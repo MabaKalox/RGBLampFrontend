@@ -41,7 +41,6 @@ const ColorSelect = (props: Props) => {
     const hueSliderHandler = (new_value: number) => {
         if (props.isON) {
             if (saturationSliderEl && saturationSliderEl.current) {
-                console.log("test")
                 updateSlidersColors(new_value);
             }
             const hslArrayCopy = props.hslArray.slice();

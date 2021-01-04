@@ -10,10 +10,11 @@ import BootstrapSwitchButton from 'bootstrap-switch-button-react';
 import axios from "axios";
 import BrightnessSlider from './Components/BrightnessSlider';
 import ColorSelect from './Components/ColorSelect';
-
+import hsl2Rgb from "./tools/hsl2Rgb";
 
 
 const App = () => {
+    const offMode = 0;
     const [autoApply, setAutoApply] = useState(false);
     const [isON, setIsON] = useState(true);
     const [mode, setMode] = useState(3);
@@ -28,12 +29,26 @@ const App = () => {
         console.log(overallBrightness)
     }
 
-    const applySettings = () => {
-
-    }
 
     const colorSliderCompleteHandler = () => {
         console.log(hslArray)
+    }
+
+    const upload_settings = () => {
+        const [red, green, blue] = hsl2Rgb(hslArray);
+        axios.post('/upload_settings', {
+            mode: (isON) ? mode : offMode,
+            red: red,
+            green: green,
+            blue: blue,
+            overall_brightness: overallBrightness / 100
+        })
+            .then(response => {
+                console.log(response)
+            })
+            .catch(error => {
+                console.log(error)
+            })
     }
 
     return (
@@ -87,7 +102,7 @@ const App = () => {
                         </Navbar.Brand>
                         <Navbar.Brand className={"m-0 ml-sm-2"}>
                             <Button variant={"success"} className={[(autoApply ? "disabled" : "")].join(" ")}
-                                    onClick={applySettings}>Apply</Button>
+                                    onClick={upload_settings}>Apply</Button>
                         </Navbar.Brand>
                     </Navbar>
                 </Col>
@@ -97,7 +112,7 @@ const App = () => {
                     <Container fluid className="py-2 px-4">
                         <Row className={"justify-content-center"}>
                             <Col xs={12}>
-                                <Dropdown.Divider />
+                                <Dropdown.Divider/>
                                 <BrightnessSlider
                                     overallBrightness={overallBrightness}
                                     setOverallBrightness={setOverallBrightness}
@@ -109,7 +124,7 @@ const App = () => {
                         </Row>
                         {(mode === 3) && <Row>
                             <Col xs={12}>
-                                <Dropdown.Divider />
+                                <Dropdown.Divider/>
                                 <ColorSelect
                                     setHslArray={setHslArray}
                                     onChangeCompleteHandler={colorSliderCompleteHandler}
