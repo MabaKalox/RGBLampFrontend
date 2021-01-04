@@ -47,7 +47,7 @@ const BrightnessSlider = (props: AppProps) => {
                 <Col sm={6} md={5} lg={3}>
                     <InputGroup>
                         <InputGroup.Prepend>
-                            <InputGroup.Text>Brightness:</InputGroup.Text>
+                            <InputGroup.Text>{props.label}:</InputGroup.Text>
                         </InputGroup.Prepend>
                         <FormControl value={props.overallBrightness} onChange={brightnessInput} id="inlineFormInputGroupBrightness" placeholder="[ 0-100 ]" />
                     </InputGroup>

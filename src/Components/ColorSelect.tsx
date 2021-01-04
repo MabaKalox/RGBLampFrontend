@@ -74,9 +74,15 @@ const ColorSelect = (props: Props) => {
     const colorInput = (e: React.ChangeEvent<FormControl>, i: number) => {
         if (props.isON) {
             const new_value = Number(e.target.value);
-            if (!isNaN(new_value) && new_value >= 0 && new_value <= 255) {
+            if (!isNaN(new_value)) {
                 const rgbArray = hsl2Rgb(props.hslArray);
-                rgbArray[i] = Number(e.target.value);
+                if (new_value >= 0 && new_value <= 255) {
+                    rgbArray[i] = Number(e.target.value);
+                } else if (new_value > 255) {
+                    rgbArray[i] = 255;
+                }else if (new_value < 0) {
+                    rgbArray[i] = 0;
+                }
                 props.setHslArray(rgb2Hsl(rgbArray));
             }
         }
@@ -85,11 +91,11 @@ const ColorSelect = (props: Props) => {
     return (
         <Form>
             <Form.Row className="justify-content-center">
-                <Col sm={6} md={5} lg={3}>
+                <Col sm={7} md={5} lg={3}>
                     <InputGroup>
                         <InputGroup.Prepend>
                             <InputGroup.Text>
-                                Color:
+                                {props.label}:
                             </InputGroup.Text>
                         </InputGroup.Prepend>
                         <FormControl
