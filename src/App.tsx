@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useRef, useState, useEffect} from 'react';
 import Button from 'react-bootstrap/Button';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
@@ -11,8 +11,10 @@ import axios from "axios";
 import BrightnessSlider from './Components/BrightnessSlider';
 import ColorSelect from './Components/ColorSelect';
 import RainbowSpeedSlider from './Components/RainbowSpeedSlider';
+import LampDemo from "./Components/LampDemo";
 import hsl2Rgb from "./tools/hsl2Rgb";
 
+type LampDemoType = React.ElementRef<typeof LampDemo>;
 
 const App = () => {
     const offMode = 0;
@@ -20,34 +22,21 @@ const App = () => {
     const [isON, setIsON] = useState(true);
     const [mode, setMode] = useState(3);
     const [overallBrightness, setOverallBrightness] = useState(100);
-    const [rainbowSpeed, setRainbowSpeed] = useState(100);
+    const [rainbowSpeed, setRainbowSpeed] = useState(50);
     const [hslArray, setHslArray] = useState([90, 100, 50]);
 
-    const updateMode = (new_mode: number) => {
-        setMode(new_mode);
-    }
 
-    const brightnessSliderCompleteHandler = () => {
-        console.log(overallBrightness)
-    }
+    const lampDemoRef = useRef<LampDemoType>(null);
 
-    const rainbowSpeedSliderCompleteHandler = () => {
-
-    }
-
-
-    const colorSliderCompleteHandler = () => {
-        console.log(hslArray)
-    }
-
-    const upload_settings = () => {
+    const upload_settings = (current_mode: number = mode) => {
         const [red, green, blue] = hsl2Rgb(hslArray);
+        const zero_one_overall_brightness = overallBrightness / 100;
         axios.post('/upload_settings', {
-            mode: (isON) ? mode : offMode,
+            mode: (isON) ? current_mode : offMode,
             red: red,
             green: green,
             blue: blue,
-            overall_brightness: overallBrightness / 100,
+            overall_brightness: zero_one_overall_brightness,
             rainbow_speed: rainbowSpeed
         })
             .then(response => {
@@ -56,6 +45,49 @@ const App = () => {
             .catch(error => {
                 console.log(error)
             })
+        if (lampDemoRef && lampDemoRef.current) {
+            lampDemoRef.current.applySettings(
+                (isON) ? current_mode : offMode, red, green, blue,
+                zero_one_overall_brightness, rainbowSpeed
+            )
+        }
+    }
+
+    const updateMode = (new_mode: number) => {
+        setMode(new_mode);
+        if (autoApply) {
+            upload_settings(new_mode);
+        }
+    }
+
+
+    useEffect(() => {
+        const [red, green, blue] = hsl2Rgb(hslArray);
+        const zero_one_overall_brightness = overallBrightness / 100;
+        if (lampDemoRef && lampDemoRef.current) {
+            lampDemoRef.current.applySettings(
+                (isON) ? mode : offMode, red, green, blue,
+                zero_one_overall_brightness, rainbowSpeed
+            )
+        }
+    }, [])
+
+    const brightnessSliderCompleteHandler = () => {
+        if (autoApply) {
+            upload_settings();
+        }
+    }
+
+    const rainbowSpeedSliderCompleteHandler = () => {
+        if (autoApply) {
+            upload_settings();
+        }
+    }
+
+    const colorSliderCompleteHandler = () => {
+        if (autoApply) {
+            upload_settings();
+        }
     }
 
     return (
@@ -97,7 +129,7 @@ const App = () => {
                         <Navbar.Brand className={"m-0"}>
                             <BootstrapSwitchButton
                                 checked={autoApply}
-                                onlabel='Instant Apply'
+                                onlabel='Auto Apply'
                                 onstyle='primary'
                                 offlabel='Manual Apply'
                                 offstyle='secondary'
@@ -109,7 +141,7 @@ const App = () => {
                         </Navbar.Brand>
                         <Navbar.Brand className={"m-0 ml-sm-2"}>
                             <Button variant={"success"} className={[(autoApply ? "disabled" : "")].join(" ")}
-                                    onClick={upload_settings}>Apply</Button>
+                                    onClick={() => upload_settings()}>Apply</Button>
                         </Navbar.Brand>
                     </Navbar>
                 </Col>
@@ -153,6 +185,12 @@ const App = () => {
                                 />
                             </Col>
                         </Row>}
+                        <Row>
+                            <Col xs={"12"}>
+                                <Dropdown.Divider/>
+                                <LampDemo ref={lampDemoRef} />
+                            </Col>
+                        </Row>
                     </Container>
                 </Col>
             </Row>

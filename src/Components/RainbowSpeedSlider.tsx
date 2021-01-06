@@ -28,12 +28,12 @@ const RainbowSpeedSlider = (props: Props) => {
         if (props.isON) {
             const new_value = Number(e.target.value);
             if (!isNaN(new_value)) {
-                if (new_value >= 0 && new_value <= 100) {
+                if (new_value >= 1 && new_value <= 100) {
                     props.setRainbowSpeed(new_value)
                 } else if (new_value > 100) {
                     props.setRainbowSpeed(100)
-                } else if (new_value < 0) {
-                    props.setRainbowSpeed(0)
+                } else if (new_value < 1) {
+                    props.setRainbowSpeed(1)
                 }
             }
         }
@@ -42,7 +42,7 @@ const RainbowSpeedSlider = (props: Props) => {
     return (
         <Form>
             <Form.Row className="justify-content-center">
-                <Col sm={7} md={5} lg={3}>
+                <Col sm={7} md={5} lg={4}>
                     <InputGroup>
                         <InputGroup.Prepend>
                             <InputGroup.Text>
@@ -60,7 +60,7 @@ const RainbowSpeedSlider = (props: Props) => {
                 <Col className={["rainbow-speed-slider-container", ((!props.isON) ? "disabled" : "")].join(" ")}>
                     <Slider
                         value={props.rainbowSpeed}
-                        min={0}
+                        min={1}
                         max={100}
                         onChange={rainbowSpeedSliderHandler}
                         onChangeComplete={props.onChangeCompleteHandler}

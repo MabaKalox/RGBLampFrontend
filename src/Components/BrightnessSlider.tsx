@@ -44,7 +44,7 @@ const BrightnessSlider = (props: AppProps) => {
     return (
         <Form>
             <Form.Row className="justify-content-center">
-                <Col sm={6} md={5} lg={3}>
+                <Col sm={6} md={5} lg={4}>
                     <InputGroup>
                         <InputGroup.Prepend>
                             <InputGroup.Text>{props.label}:</InputGroup.Text>

@@ -91,7 +91,7 @@ const ColorSelect = (props: Props) => {
     return (
         <Form>
             <Form.Row className="justify-content-center">
-                <Col sm={7} md={5} lg={3}>
+                <Col sm={7} md={5} lg={4}>
                     <InputGroup>
                         <InputGroup.Prepend>
                             <InputGroup.Text>

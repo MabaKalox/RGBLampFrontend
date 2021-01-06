@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2769b096-c123-4ba9-b3db-b6f85a87506b" name="Default Changelist" comment="Rainbow Speed">
+      <change afterPath="$PROJECT_DIR$/src/Components/LampDemo.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/style/LampDemo.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/RainbowSpeedSlider.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/RainbowSpeedSlider.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/BrightnessSlider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/BrightnessSlider.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/ColorSelect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ColorSelect.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/RainbowSpeedSlider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/RainbowSpeedSlider.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +41,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TypeScript" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -73,6 +82,8 @@
       <workItem from="1609790922791" duration="4090000" />
       <workItem from="1609797848612" duration="211000" />
       <workItem from="1609798542788" duration="258000" />
+      <workItem from="1609830984563" duration="21829000" />
+      <workItem from="1609915123122" duration="4714000" />
     </task>
     <task id="LOCAL-00001" summary="fisrt_commit">
       <created>1609742709258</created>
