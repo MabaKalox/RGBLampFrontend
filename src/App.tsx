@@ -20,24 +20,25 @@ const App = () => {
     const offMode = 0;
     const [autoApply, setAutoApply] = useState(false);
     const [isON, setIsON] = useState(true);
-    const [mode, setMode] = useState(3);
+    const [mode, setMode] = useState(1);
     const [overallBrightness, setOverallBrightness] = useState(100);
-    const [rainbowSpeed, setRainbowSpeed] = useState(50);
+    const [rainbowSpeed, setRainbowSpeed] = useState(10);
     const [hslArray, setHslArray] = useState([90, 100, 50]);
-
 
     const lampDemoRef = useRef<LampDemoType>(null);
 
     const upload_settings = (current_mode: number = mode) => {
         const [red, green, blue] = hsl2Rgb(hslArray);
         const zero_one_overall_brightness = overallBrightness / 100;
-        axios.post('/upload_settings', {
-            mode: (isON) ? current_mode : offMode,
-            red: red,
-            green: green,
-            blue: blue,
-            overall_brightness: zero_one_overall_brightness,
-            rainbow_speed: rainbowSpeed
+        axios.get('/upload_settings', {
+            params: {
+                mode: (isON) ? current_mode : offMode,
+                red: red,
+                green: green,
+                blue: blue,
+                overall_brightness: zero_one_overall_brightness,
+                rainbow_speed: rainbowSpeed
+            }
         })
             .then(response => {
                 console.log(response)
@@ -120,7 +121,8 @@ const App = () => {
                                         offlabel='OFF'
                                         offstyle='secondary'
                                         onChange={(checked: boolean) => {
-                                            setIsON(checked)
+                                            setIsON(checked);
+                                            upload_settings();
                                         }}
                                     />
                                 </Nav.Item>

@@ -148,7 +148,7 @@ const LampDemo: React.RefForwardingComponent<LampDemoHandle, LampDemoProps> = (p
         }
     }, [shadowSpread, mode])
 
-    const get_glow_effect = (rgbColor: string) => `0 0 120px ${shadowSpread}px ${rgbColor}`;
+    const get_glow_effect = (rgbColor: string) => (mode !== 0) ? `0 0 120px ${shadowSpread}px ${rgbColor}` : "none";
 
     const getKeyFrames = (property_name: string, isGlow?: boolean) => {
         if (mode === 2) {

@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2769b096-c123-4ba9-b3db-b6f85a87506b" name="Default Changelist" comment="Rainbow Speed">
-      <change afterPath="$PROJECT_DIR$/src/Components/LampDemo.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/style/LampDemo.css" afterDir="false" />
+    <list default="true" id="2769b096-c123-4ba9-b3db-b6f85a87506b" name="Default Changelist" comment="Implementing Lamp Demonstration Mode">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/BrightnessSlider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/BrightnessSlider.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/ColorSelect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ColorSelect.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/RainbowSpeedSlider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/RainbowSpeedSlider.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/LampDemo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/LampDemo.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +36,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TypeScript" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -83,7 +77,13 @@
       <workItem from="1609797848612" duration="211000" />
       <workItem from="1609798542788" duration="258000" />
       <workItem from="1609830984563" duration="21829000" />
-      <workItem from="1609915123122" duration="4714000" />
+      <workItem from="1609915123122" duration="5118000" />
+      <workItem from="1609934616318" duration="2937000" />
+      <workItem from="1609938799584" duration="2424000" />
+      <workItem from="1610052437754" duration="10000" />
+      <workItem from="1610058403621" duration="6000" />
+      <workItem from="1610060527206" duration="599000" />
+      <workItem from="1610240277185" duration="424000" />
     </task>
     <task id="LOCAL-00001" summary="fisrt_commit">
       <created>1609742709258</created>
@@ -127,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609797743725</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Implementing Lamp Demonstration Mode">
+      <created>1609919994624</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1609919994624</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,7 +158,8 @@
     <MESSAGE value="Color Selection fix disable mode" />
     <MESSAGE value="Brightness input and etc." />
     <MESSAGE value="Rainbow Speed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rainbow Speed" />
+    <MESSAGE value="Implementing Lamp Demonstration Mode" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementing Lamp Demonstration Mode" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
